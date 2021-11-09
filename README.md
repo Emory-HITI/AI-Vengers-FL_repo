@@ -32,7 +32,6 @@ Optional Fields:
 #### Data Preparation
 
 1. Prepare a CSV file with two columns ["Path", "Race"]  
--add data preprocessing
 2. Run the data preprocessing scripts which will output a JSON file for the train, test, and validation sets  
 3. Copy these JSON files into the data directory of your client  
 4. Symlink your JSON file to a file named dataset.json `ln -s [json file] dataset.json`  
