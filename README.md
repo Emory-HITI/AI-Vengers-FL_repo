@@ -33,7 +33,7 @@ Optional Fields:
 
 1. Prepare a CSV file with two columns ["Path", "Race"]  
 2. Run the data preprocessing scripts which will output a JSON file for the train, test, and validation sets  
-   `python create_json.py [path/to/csv]`
+   `python create_jsons.py [path/to/csv]`
 4. Copy these JSON files into the data directory of your client  
 5. Symlink your JSON file to a file named dataset.json `ln -s [json file] dataset.json`  
 
