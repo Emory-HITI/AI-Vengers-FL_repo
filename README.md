@@ -24,10 +24,11 @@ Optional Fields:
 #### Label Format
 
 0 - Black  
-1 - Asian  
+1 - Indian Asian
 2 - Hispanic (if reliable)  
 3 - White  
-4 - Indigenous Populations  
+4 - Indigenous Populations
+5 - Other Asian
 
 #### Data Preparation
 
