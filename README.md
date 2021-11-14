@@ -27,7 +27,7 @@ Optional Fields:
 1 - Indian Asian  
 2 - Hispanic (if reliable)  
 3 - White  
-4 - Indigenous Populations
+4 - Indigenous Populations  
 5 - Asian Unspecified  
 
 #### Data Preparation
