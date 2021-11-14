@@ -7,21 +7,23 @@ from sklearn.model_selection import train_test_split
 def convert_MMAR(df):
     path = None
     
-    path = list(map(lambda x: x.split("/")[-1], df['Path']))
-    label = list(df['Label'])
+    path = list(map(lambda x: x.split("/")[-1], df["Path"]))
+    label = list(df["Race"])
     ret_list = []
     for p, l in zip(path, label):
         
         if l == 0: 
-            temp_map = {"image":p, "label":[1, 0, 0, 0, 0]}
+            temp_map = {"image":p, "label":[1, 0, 0, 0, 0, 0]}
         elif l == 1:
-            temp_map = {"image":p, "label":[0, 1, 0, 0, 0]}
+            temp_map = {"image":p, "label":[0, 1, 0, 0, 0, 0]}
         elif l == 2:
-            temp_map = {"image":p, "label":[0, 0, 1, 0, 0]}
+            temp_map = {"image":p, "label":[0, 0, 1, 0, 0, 0]}
         elif l == 3:
-            temp_map = {"image":p, "label":[0, 0, 0, 1, 0]}
+            temp_map = {"image":p, "label":[0, 0, 0, 1, 0, 0]}
         elif l == 4: 
-            temp_map = {"image":p, "label":[0, 0, 0, 0, 1]}
+            temp_map = {"image":p, "label":[0, 0, 0, 0, 1, 0]}
+        elif l == 5:
+            temp_map = {"image" :p, "label":[0, 0, 0, 0, 0, 1]}
         else:
             print("Skipping")
             
@@ -31,7 +33,7 @@ def convert_MMAR(df):
 def convert_to_json(df, save_csv=True):
         train, valid = train_test_split(df, test_size=0.25, random_state=2021)
         valid, test = train_test_split(valid, test_size=0.5, random_state=2021)
-        print(train["Label"].value_counts(), valid["Label"].value_counts())
+        print(train["Race"].value_counts(), valid["Race"].value_counts())
         
         if save_csv:
             train.to_csv("train.csv")
