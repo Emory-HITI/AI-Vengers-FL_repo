@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 def convert_MMAR(df, possibleLabelCount):
     path = None
     path = list(map(lambda x: x.split("/")[-1], df["Path"]))
-    label = list(df["Label"])
+    label = list(df["Race"])
     ret_list = []
     for p, l in zip(path, label):
         
@@ -28,7 +28,7 @@ def convert_MMAR(df, possibleLabelCount):
 def convert_to_json(df, possibleLabelCount, save_csv=True):
         train, valid = train_test_split(df, test_size=0.25, random_state=2021)
         valid, test = train_test_split(valid, test_size=0.5, random_state=2021)
-        print(train["Label"].value_counts(), valid["Label"].value_counts())
+        print(train["Race"].value_counts(), valid["Race"].value_counts())
         
         if save_csv:
             train.to_csv("train.csv")
