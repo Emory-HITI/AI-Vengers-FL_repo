@@ -8,7 +8,8 @@ This document outlines the data and computational requirements for participating
 
 1. Deep Learning Base AMI (Ubuntu 18.04)  
 2. Test/Demo - t2.2xlarge   
-3. 8 vCPU, 32GB memory, 100GB EBS disk, network performance “Moderate”   
+3. 8 vCPU, 32GB memory, 100GB EBS disk, network performance “Moderate”
+4. At least 1 GPU
 
 ### Data Requirements
 
@@ -23,12 +24,20 @@ Optional Fields:
 
 #### Label Format
 
-0 - Black  
-1 - Indian Asian  
-2 - Hispanic (if reliable)  
-3 - White  
-4 - Indigenous Populations  
-5 - Asian Unspecified  
+0 - Black   
+1 - Asian Taiwanese  
+2 - Asian Vietnamese  
+3 - Asian Pakistani  
+4 - Asian Korean  
+5 - Asian Laotian  
+6 - Asian Indian  
+7 - Asian Chinese  
+8 - Asian Filipino  
+9 - Asian Japanese  
+10 - Asian Other  
+11 - White  
+12 - American Indian or Alaska Native  
+13 - Native Hawaiian or Other Pacific Islander  
 
 #### Data Preparation
 
