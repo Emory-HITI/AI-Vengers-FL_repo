@@ -40,9 +40,9 @@ Optional Fields:
 13 - Native Hawaiian or Other Pacific Islander  
 
 #### Data Preparation
-
-1. Prepare a CSV file with two columns ["Path", "Race"]  
-2. Run the data preprocessing scripts which will output a JSON file for the train, test, and validation sets  
+1. Extract metadata and pngs from your DICOMs using Niffler PNG Extaction found here https://github.com/Emory-HITI/Niffler/tree/master/modules/png-extraction  
+2. Prepare a CSV file with two columns ["Path", "Race"]  
+3. Run the data preprocessing scripts which will output a JSON file for the train, test, and validation sets  
    `python create_jsons.py [path/to/csv]`
 4. Copy these JSON files into the data directory of your client  
 5. Symlink your JSON file to a file named dataset.json `ln -s [json file] dataset.json`  
