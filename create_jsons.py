@@ -54,7 +54,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 3:
         raise ValueError("Malformed command line. Please specify the path to your data csv")
     
-    possibleLabelCount = 14
+    possibleLabelCount = 15
     csv_path = sys.argv[1]
     print('Converting CSV to JSON')
     df = pd.read_csv(csv_path)
