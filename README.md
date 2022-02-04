@@ -37,7 +37,8 @@ Optional Fields:
 10 - Asian Other  
 11 - White  
 12 - American Indian or Alaska Native  
-13 - Native Hawaiian or Other Pacific Islander  
+13 - Native Hawaiian or Other Pacific Islander    
+14 - Latin American  
 
 #### Data Preparation
 1. Extract metadata and pngs from your DICOMs using Niffler PNG Extaction found here https://github.com/Emory-HITI/Niffler/tree/master/modules/png-extraction  
