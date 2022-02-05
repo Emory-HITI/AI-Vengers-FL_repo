@@ -10,12 +10,12 @@ from sklearn.model_selection import train_test_split
 def convert_MMAR(df, possibleLabelCount):
     path = None
     path = list(map(lambda x: x.split("/")[-1], df["Path"]))
-    label = list(df["Race"])
+    label = list(df["Label"])
     ret_list = []
     for p, l in zip(path, label):
         
         if l < possibleLabelCount:
-            temp_label = list(np.zeros((possibleLabelCount)).astype(int))
+            temp_label = list([0] * possibleLabelCount)
             temp_label[int(l)] = 1
             temp_map = {"image":p, "label":temp_label}
 
@@ -28,7 +28,7 @@ def convert_MMAR(df, possibleLabelCount):
 def convert_to_json(df, possibleLabelCount, save_csv=True):
         train, valid = train_test_split(df, test_size=0.25, random_state=2021)
         valid, test = train_test_split(valid, test_size=0.5, random_state=2021)
-        print(train["Race"].value_counts(), valid["Race"].value_counts())
+#         print(train["Race"].value_counts(), valid["Race"].value_counts())
         
         if save_csv:
             train.to_csv("train.csv")
@@ -36,11 +36,12 @@ def convert_to_json(df, possibleLabelCount, save_csv=True):
             test.to_csv("test.csv")
 
         mmar_train = convert_MMAR(train, possibleLabelCount)
+        
         mmar_valid = convert_MMAR(valid, possibleLabelCount)
         mmar_test = convert_MMAR(test, possibleLabelCount)
 
-        MMAR_train_valid = {"label_format":list(np.ones(possibleLabelCount)), "training":mmar_train, "validation":mmar_valid}
-        MMAR_test = {"label_format":list(np.ones(possibleLabelCount)), "validation":mmar_valid}
+        MMAR_train_valid = {"label_format":list([1] * possibleLabelCount), "training":mmar_train, "validation":mmar_valid}
+        MMAR_test = {"label_format":list([1] * possibleLabelCount), "validation":mmar_valid}
 
         json_obj = json.dumps(MMAR_train_valid, indent=4)
 
@@ -49,6 +50,7 @@ def convert_to_json(df, possibleLabelCount, save_csv=True):
             
         with open("test.json", 'w') as f:
             json.dump(MMAR_test, f, indent=4)
+
         
 if __name__ == "__main__":
     if len(sys.argv) > 3:
