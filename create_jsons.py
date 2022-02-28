@@ -41,7 +41,7 @@ def convert_to_json(df, possibleLabelCount, save_csv=True):
         mmar_test = convert_MMAR(test, possibleLabelCount)
 
         MMAR_train_valid = {"label_format":list([1] * possibleLabelCount), "training":mmar_train, "validation":mmar_valid}
-        MMAR_test = {"label_format":list([1] * possibleLabelCount), "validation":mmar_valid}
+        MMAR_test = {"label_format":list([1] * possibleLabelCount), "validation":mmar_test}
 
         json_obj = json.dumps(MMAR_train_valid, indent=4)
 
@@ -56,7 +56,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 3:
         raise ValueError("Malformed command line. Please specify the path to your data csv")
     
-    possibleLabelCount = 15
+    possibleLabelCount = 6
     csv_path = sys.argv[1]
     print('Converting CSV to JSON')
     df = pd.read_csv(csv_path)
