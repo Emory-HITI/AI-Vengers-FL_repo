@@ -24,21 +24,12 @@ Optional Fields:
 
 #### Label Format
 
-0 - Black   
-1 - Asian Taiwanese  
-2 - Asian Vietnamese  
-3 - Asian Pakistani  
-4 - Asian Korean  
-5 - Asian Laotian  
-6 - Asian Indian  
-7 - Asian Chinese  
-8 - Asian Filipino  
-9 - Asian Japanese  
-10 - Asian Other  
-11 - White  
-12 - American Indian or Alaska Native  
-13 - Native Hawaiian or Other Pacific Islander    
-14 - Latin American  
+0 - American Indian or Alaska Native   
+1 - Asian
+2 - Black or African American 
+3 - Hispanic or Latino
+4 - Native Hawaiian or Other Pacific Islander  
+5 - White  
 
 #### Data Preparation
 1. Extract metadata and pngs from your DICOMs using Niffler PNG Extaction found here https://github.com/Emory-HITI/Niffler/tree/master/modules/png-extraction  
